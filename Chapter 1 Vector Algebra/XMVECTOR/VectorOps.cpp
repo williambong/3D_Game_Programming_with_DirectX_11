@@ -1,8 +1,9 @@
 
 #include <windows.h> // for FLOAT definition
-#include <xnamath.h>
+#include <DirectXMath.h>
 #include <iostream>
 using namespace std;
+using namespace DirectX;
 
 // Overload the  "<<" operators so that we can use cout to 
 // output XMVECTOR objects.
@@ -47,7 +48,7 @@ int main()
 
 	cout << "XMVectorMultiply(u, v)         = " << XMVectorMultiply(u, v) << endl;
 	cout << "XMVectorSaturate(q)            = " << XMVectorSaturate(q) << endl;
-	cout << "XMVectorMin(p, v               = " << XMVectorMin(p, v) << endl;
+	cout << "XMVectorMin(p, v)              = " << XMVectorMin(p, v) << endl;
 	cout << "XMVectorMax(p, v)              = " << XMVectorMax(p, v) << endl;
 
 	return 0;
