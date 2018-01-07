@@ -1,7 +1,8 @@
 #include <windows.h> // for FLOAT definition
-#include <xnamath.h>
+#include <DirectXMath.h>
 #include <iostream>
 using namespace std;
+using namespace DirectX;
 
 // Overload the  "<<" operators so that we can use cout to 
 // output XMVECTOR and XMMATRIX objects.
@@ -16,10 +17,13 @@ ostream& operator<<(ostream& os, FXMVECTOR v)
 
 ostream& operator<<(ostream& os, CXMMATRIX m)
 {
+	XMFLOAT4X4 dest;
+	XMStoreFloat4x4(&dest, m);
+
 	for(int i = 0; i < 4; ++i)
 	{
 		for(int j = 0; j < 4; ++j)
-			os << m(i, j) << "\t";
+			os << dest.m[i][j] << "\t";
 		os << endl;
 	}
 	return os;
